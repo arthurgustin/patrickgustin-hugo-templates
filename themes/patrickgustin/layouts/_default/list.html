@@ -3,7 +3,7 @@
         <div class="columns">
             {{ range .Pages }}
                 <div class="image fit">
-                    <a href="{{ .Params.Url }}"><img src="images/compressed/{{ .Params.imageName }}" alt="" /></a>
+                    <a href="{{ .Site.BaseURL }}{{ .Params.Url }}"><img src="images/compressed/{{ .Params.imageName }}" alt="" /></a>
                 </div>
             {{ end }}
         </div>
