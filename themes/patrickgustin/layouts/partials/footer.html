@@ -1,0 +1,36 @@
+<!-- Footer -->
+<footer id="footer">
+    <a href="#" class="info fa fa-info-circle"><span>About</span></a>
+    <div class="inner">
+        <div class="content">
+            <h3>Vestibulum hendrerit tortor id gravida</h3>
+            <p>In tempor porttitor nisl non elementum. Nulla ipsum ipsum, feugiat vitae vehicula vitae, imperdiet sed risus. Fusce sed dictum neque, id auctor felis. Praesent luctus sagittis viverra. Nulla erat nibh, fermentum quis enim ac, ultrices euismod augue. Proin ligula nibh, pretium at enim eget, tempor feugiat nulla.</p>
+        </div>
+        <div class="copyright">
+            <h3>Contact me</h3>
+            <ul class="icons">
+                <li><a href="mailto:contact@patrickgustin-artist.fr" class="icon fa-envelope"><span class="label"></span> contact@patrickgustin-artist.fr</a> </li>
+            </ul>
+            &copy; Made by my son Arthur Gustin. Design: <a href="https://templated.co">TEMPLATED</a>.
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+<script>
+    if (sessionStorage.getItem('firstVisit') !== 'true') {
+        (function($) {
+            $(function() {
+                $('#header').each(function () {
+                    let t = jQuery(this);
+                    t.toggleClass('hide');
+                });
+            });
+        })(jQuery);
+        sessionStorage.setItem('firstVisit','true');
+    }
+</script>

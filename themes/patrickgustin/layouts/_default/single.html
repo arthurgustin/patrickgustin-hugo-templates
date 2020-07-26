@@ -1,0 +1,107 @@
+{{ define "main" }}
+    {{ if eq .Params.orientation "Portrait" }}
+    <div class="inner">
+        <div class="columns columns2">
+            <div id="preview">
+                <div class="inner">
+                    <div class="image fit">
+                        <img src="/images/full-size/{{ .Params.imageName }}" alt="" />
+                    </div>
+                    <div class="content flex-center">
+                        <header>
+                            <h2>{{ .Title }}</h2>
+                        </header>
+                        <div id='tabs' class="flex-center">
+                            <a href="#tab1" class="nav-tab tab1">Détails</a>
+                            <div id='tab1' class='tab1'>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>Dimensions</td>
+                                        <td>{{ .Params.dimensions }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Technique</td>
+                                        <td>{{ .Params.technique }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Orientation</td>
+                                        <td>{{ .Params.orientation }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ .Params.state }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ if ne .NextInSection nil }}
+                    {{ with .NextInSection }}
+                        <a href="{{.Permalink}}" class="nav previous"><span class="fa fa-chevron-left"></span></a>
+                    {{ end }}
+                {{ end }}
+                {{ if ne .PrevInSection  nil }}
+                    {{ with .PrevInSection }}
+                        <a href="{{.Permalink}}" class="nav next"><span class="fa fa-chevron-right"></span></a>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ else }}
+<div class="inner">
+    <div class="columns columns2">
+        <div id="preview">
+            <div class="inner">
+                <div class="image fit">
+                    <img src="/images/full-size/{{ .Params.imageName }}" alt="" />
+                </div>
+                <div class="content flex-center">
+                    <header>
+                        <h2>{{ .Title }}</h2>
+                    </header>
+                    <div id='tabs' class="flex-center">
+                        <a href="#tab1" class="nav-tab tab1">Détails</a>
+                        <div id='tab1' class='tab1'>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>{{ .Params.dimensions }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Technique</td>
+                                    <td>{{ .Params.technique }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Orientation</td>
+                                    <td>{{ .Params.orientation }}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>{{ .Params.state }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ if ne .NextInSection nil }}
+                {{ with .NextInSection }}
+                    <a href="{{.Permalink}}" class="nav previous"><span class="fa fa-chevron-left"></span></a>
+                {{ end }}
+            {{ end }}
+            {{ if ne .PrevInSection  nil }}
+                {{ with .PrevInSection }}
+                    <a href="{{.Permalink}}" class="nav next"><span class="fa fa-chevron-right"></span></a>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+    {{ end }}
+{{ end }}

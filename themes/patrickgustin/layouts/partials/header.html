@@ -1,0 +1,22 @@
+{{ if .IsHome }}
+
+<header id="header" class="hide">
+    <div class="inner">
+        <div class="content">
+            <h1>Patrick Gustin</h1>
+            <h2>Le meilleur peintre du Perthus</h2>
+            <a href="#" class="button big alt"><span>Commencer la visite</span></a>
+        </div>
+        <a href="#" class="button hidden"><span>Commencer la visite</span></a>
+    </div>
+</header>
+
+{{ else }}
+
+<header id="header" class="preview">
+    <div class="inner">
+        <a href="/" class="button hidden"><span>Let's Go</span></a>
+    </div>
+</header>
+
+{{ end }}
